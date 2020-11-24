@@ -40,6 +40,10 @@ public class TeamsService {
         return teamsRepository.findByProfessor(userRepository.getOne(professorId));
 
     }
+
+    public List<Teams> getAllTeams() {
+    	return teamsRepository.findAll();
+	}
     
     public void deleteTeam(Long idTeam) {
     	Optional<Teams> team = teamsRepository.findById(idTeam);

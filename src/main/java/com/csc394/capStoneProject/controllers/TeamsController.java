@@ -46,6 +46,12 @@ public class TeamsController {
                  .body(TeamsDTO.listEntityToDTO(teamsService.findAllTeamByProfessorId(professorId)));
      }
 
+     @GetMapping("/all")
+     public ResponseEntity<List<TeamsDTO>> getTeamsAll () {
+         return ResponseEntity.ok()
+                 .body(TeamsDTO.listEntityToDTO(teamsService.getAllTeams()));
+     }
+
 
 
     @PostMapping()
